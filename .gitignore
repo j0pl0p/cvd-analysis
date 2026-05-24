@@ -219,3 +219,6 @@ __marimo__/
 
 preprocessing/data/processed/*
 preprocessing/data/raw/*
+
+visualizing/data/processed/*
+visualizing/data/raw/*

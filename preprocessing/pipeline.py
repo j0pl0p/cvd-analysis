@@ -27,10 +27,7 @@ history_2022 = []
 def process_2020(df: pl.DataFrame) -> tuple[pl.DataFrame, list]:
     history = [('Изначальный размер', len(df))]
 
-    df_no_duplicates = remove_duplicates(df)
-    history.append(('Удаление дубликатов', len(df_no_duplicates)))
-
-    df_binarized = binarize_2020(df_no_duplicates)
+    df_binarized = binarize_2020(df)
     history.append(('Бинаризация признаков', len(df_binarized)))
 
     df_no_outliers = remove_outliers_2020(df_binarized)
@@ -48,10 +45,7 @@ def process_2020(df: pl.DataFrame) -> tuple[pl.DataFrame, list]:
 def process_2022(df: pl.DataFrame) -> tuple[pl.DataFrame, list]:
     history = [('Изначальный размер', len(df))]
 
-    df_no_duplicates = remove_duplicates(df)
-    history.append(('Удаление дубликатов', len(df_no_duplicates)))
-
-    df_binarized = binarize_2022(df_no_duplicates)
+    df_binarized = binarize_2022(df)
     history.append(('Бинаризация признаков', len(df_binarized)))
 
     df_with_target = create_target_2022(df_binarized)
@@ -75,6 +69,7 @@ def process_2022(df: pl.DataFrame) -> tuple[pl.DataFrame, list]:
 
     return df_renamed, history
 
+
 def make_history_df(history: list[tuple[str, int]]) -> pl.DataFrame:
     rows = []
     rows_start = history[0][1]
@@ -97,6 +92,8 @@ def make_history_df(history: list[tuple[str, int]]) -> pl.DataFrame:
 
     return pl.DataFrame(rows)
 
+print(f'Дубликатов в 2020 году: {len(df2020_raw) - len(df2020_raw.unique())}')
+print(f'Дубликатов в 2022 году: {len(df2022_raw) - len(df2022_raw.unique())}\n')
 
 processed_2020, history_2020 = process_2020(df2020_raw)
 processed_2022, history_2022 = process_2022(df2022_raw)
@@ -106,7 +103,7 @@ df_merged = merge_2020_and_2022(processed_2020, processed_2022)
 history_df_2020 = make_history_df(history_2020)
 history_df_2022 = make_history_df(history_2022)
 
-print('Обработка 2020 года:')
+print('\nОбработка 2020 года:')
 for i, h in enumerate(history_2020):
     print(
         f'{i}. {h[0]}: {h[1]}, итого -{100 * (history_2020[0][1] - h[1]) / history_2020[0][1]:.2f}%')
