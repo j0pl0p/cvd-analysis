@@ -1,0 +1,6 @@
+text.usetex: True
+text.latex.preamble: \usepackage{amsmath}\usepackage{amssymb}\usepackage[utf8]{inputenc}\usepackage[russian]{babel}
+font.family: serif
+font.serif: Computer Modern
+savefig.bbox: tight
+savefig.format: png
