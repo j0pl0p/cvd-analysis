@@ -38,3 +38,7 @@ def remove_nonsense_2022(df: pl.DataFrame) -> pl.DataFrame:
         (pl.col('WeightInKilograms') /
          pl.col('HeightInMeters')**2 - pl.col('BMI')).abs() < 1
     )
+
+
+def remove_duplicates(df: pl.DataFrame) -> pl.DataFrame:
+    return df.unique(maintain_order=True)
