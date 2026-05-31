@@ -26,7 +26,7 @@ plot_df = pl.concat([stats_2020, stats_2022]).with_columns(
 )
 
 plt.figure(figsize=(8, 4))
-colors = ['#fd3b66', '#3ecd86']
+colors = ['#3ecd86', '#fd3b66']
 ax = sns.barplot(
     data=plot_df,
     x='Year',
