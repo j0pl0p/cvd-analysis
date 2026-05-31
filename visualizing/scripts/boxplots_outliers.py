@@ -21,9 +21,9 @@ for i, col in enumerate(numerical2020):
     sns.boxplot(df2020_raw[col], ax=axes[i], color='#3ecd86')
     axes[i].set_title(col)
 
-# fig.suptitle('1.1. Ящики с усами для числовых признаков, набор данных 2020 года')
+fig.suptitle('Ящики с усами для числовых признаков, набор данных 2020 года')
 fig.tight_layout()
-plt.savefig('visualizing/plots/boxplot_outliers_2020.png')
+plt.savefig('visualizing/plots/boxplot_outliers_2020.png', dpi=250)
 
 numerical2022 = [
     'PhysicalHealthDays',
@@ -40,6 +40,6 @@ for i, col in enumerate(numerical2022):
     sns.boxplot(df2022_raw[col], ax=axes[i], color='#3ecd86')
     axes[i].set_title(col)
 
-# fig.suptitle('1.2. Ящики с усами для числовых признаков, набор данных 2022 года')
+fig.suptitle('Ящики с усами для числовых признаков, набор данных 2022 года')
 fig.tight_layout()
-plt.savefig('visualizing/plots/boxplot_outliers_2022.png')
+plt.savefig('visualizing/plots/boxplot_outliers_2022.png', dpi=250)

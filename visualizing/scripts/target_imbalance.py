@@ -26,7 +26,7 @@ plot_df = pl.concat([stats_2020, stats_2022]).with_columns(
 )
 
 plt.figure(figsize=(8, 4))
-colors = ['#3ecd86', '#fd3b66']
+colors = ['#fd3b66', '#3ecd86']
 ax = sns.barplot(
     data=plot_df,
     x='Year',
@@ -37,11 +37,13 @@ ax = sns.barplot(
 
 for container in ax.containers:
     labels = [f'{bar.get_height():.2f}\%' for bar in container]
-    ax.bar_label(container, labels=labels)
+    ax.bar_label(container, labels=labels, padding=3)
 
 plt.xlabel('Год набора данных')
 plt.ylabel('Доля респондентов (\%)')
+bottom, top = plt.ylim()
+plt.ylim(top=top+3)
 plt.legend()
-
+plt.title('Дисбаланс целевой переменной в предобработанных наборах данных')
 plt.tight_layout()
-plt.savefig('visualizing/plots/target_imbalance_2020_2022_percent.png', dpi=300)
+plt.savefig('visualizing/plots/target_imbalance.png', dpi=250)

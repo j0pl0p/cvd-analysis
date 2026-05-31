@@ -23,9 +23,11 @@ ax = sns.barplot(
     color='#3ecd86',
 )
 
-# plt.title('1.3. Доля респондентов с CCЗ по возрастным категориям, набор 2020 года')
+plt.title('Доля респондентов с CCЗ по возрастным категориям, набор 2020 года')
 ax.bar_label(ax.containers[0], labels=[f'{value:.1f}\%' for value in age_heart_rate_2020['Percent']], padding=3)
+bottom, top = plt.ylim()
+plt.ylim(top=top+1)
 plt.xlabel('Возрастная категория')
 plt.ylabel('Доля больных ССЗ (\%)')
 plt.xticks(rotation=15)
-plt.savefig('visualizing/plots/age_group_percentage_2020.png', dpi=300)
+plt.savefig('visualizing/plots/age_group_percentage_2020.png', dpi=250)

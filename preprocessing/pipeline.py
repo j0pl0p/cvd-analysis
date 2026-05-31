@@ -92,8 +92,10 @@ def make_history_df(history: list[tuple[str, int]]) -> pl.DataFrame:
 
     return pl.DataFrame(rows)
 
+
 print(f'Дубликатов в 2020 году: {len(df2020_raw) - len(df2020_raw.unique())}')
-print(f'Дубликатов в 2022 году: {len(df2022_raw) - len(df2022_raw.unique())}\n')
+print(
+    f'Дубликатов в 2022 году: {len(df2022_raw) - len(df2022_raw.unique())}\n')
 
 processed_2020, history_2020 = process_2020(df2020_raw)
 processed_2022, history_2022 = process_2022(df2022_raw)
