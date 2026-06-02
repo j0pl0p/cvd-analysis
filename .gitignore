@@ -222,3 +222,4 @@ preprocessing/data/raw/*
 
 visualizing/data/processed/*
 visualizing/data/raw/*
+ml/models/catboost_info/*
