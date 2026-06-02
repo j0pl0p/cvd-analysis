@@ -11,3 +11,15 @@ overall = pd.concat([
 ], ignore_index=True).drop('Unnamed: 0', axis=1, errors='ignore')
 
 overall.to_csv('ml/experiments.csv', index=False)
+
+fi_2020 = pd.read_csv('ml/results/feature_importance_2020.csv')
+fi_2022 = pd.read_csv('ml/results/feature_importance_2022.csv')
+fi_merged = pd.read_csv('ml/results/feature_importance_merged.csv')
+
+fi_overall = pd.concat([
+    fi_2020, 
+    fi_2022,
+    fi_merged,
+], ignore_index=True)
+
+fi_overall.to_csv('ml/feature_importances.csv', index=False)
