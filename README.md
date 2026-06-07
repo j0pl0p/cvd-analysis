@@ -6,6 +6,21 @@
 
 ```text
 .
+├── ml/                                                 # Эксперименты с моделями
+│   ├── models/                                         # Ноутбуки с программным кодом работы
+│   │   ├── catboost.ipynb
+│   │   ├── log_reg.ipynb
+│   │   └── random_forest.ipynb
+│   ├── results/                                        # Результаты экспериментов: метрики моделей и feature importances лучших
+│   │   ├── catboost.csv
+│   │   ├── log_reg.csv
+│   │   ├── random_forest.csv
+│   │   ├── feature_importance_2020.csv
+│   │   ├── feature_importance_2022.csv
+│   │   └── feature_importance_merged.csv
+│   ├── experiments.csv                                 # Объединённые результаты экспериментов всех моделей
+│   ├── feature_importances.csv                         # Объединённые feature importances лучших моделей
+│   └── results_merger.py                               # Скрипт для объединения результатов в единый файл
 ├── preprocessing/                                      # Предобработка данных
 │   ├── data/
 │   │   ├── raw/                                        # Исходные данные, опубликованные на Kaggle
@@ -30,6 +45,8 @@
 │   │   ├── null_count_2022.py                         # Диаграмма количества пропущенных значений у признаков
 │   │   └── target_imbalance.py                        # Визуализация дисбаланса целевой переменной HeartDisease
 │   └── style.mplstyle                                 # Стилевой файл
+├── .gitignore
+├── certificate.pdf                                    # Сертификат о прохождении курса от Yandex DataLens
 └── README.md
 ```
 
