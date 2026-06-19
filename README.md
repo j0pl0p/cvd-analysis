@@ -151,7 +151,7 @@ python visualizing/scripts/age_group_percentage.py
 - `LogisticRegression`
 - `RandomForestClassifier`
 
-Соответсвующие jupyter-ноутбуки сохранены в папке `ml/models/`. Результаты проведенных экспериментов, такие как метрики моделей и `feature_importance` лучших из них сохранены в папке `ml/results`.
+Соответсвующие jupyter-ноутбуки сохранены в папке `ml/models/`. Результаты проведенных экспериментов, такие как метрики моделей и `feature_importance` лучших из них сохранены в папке `ml/results/`.
 
 Скрипт `results_merger.py` требуется запустить после исполнения всех трёх jupyter-ноутбуков, после чего он объединит результаты всех моделей в файлы
 
