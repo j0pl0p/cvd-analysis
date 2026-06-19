@@ -47,6 +47,7 @@
 │   └── style.mplstyle                                 # Стилевой файл
 ├── .gitignore
 ├── certificate.pdf                                    # Сертификат о прохождении курса от Yandex DataLens
+├── presentation.pdf                                   # Презентация проекта
 └── README.md
 ```
 
@@ -139,3 +140,38 @@ python visualizing/scripts/age_group_percentage.py
    Сохраняет одноимённый график, изображающий количество пропущенных значений каждого признака в наборе 2022 года.
 - `target_imbalance.py` \
    Сохраняет одноимённый график, изображающий отношение значений целевой переменной `HeartDisease` в наборах данных 2020 и 2022 года.
+
+## Работа с моделями машинного обучения
+
+Файлы, посвящённые экспериментам с ML моделями находятся в папке `ml/`.
+
+Эксперименты были проведены с моделями
+
+- `CatBoostClassifier`
+- `LogisticRegression`
+- `RandomForestClassifier`
+
+Соответсвующие jupyter-ноутбуки сохранены в папке `ml/models/`. Результаты проведенных экспериментов, такие как метрики моделей и `feature_importance` лучших из них сохранены в папке `ml/results`.
+
+Скрипт `results_merger.py` требуется запустить после исполнения всех трёх jupyter-ноутбуков, после чего он объединит результаты всех моделей в файлы
+
+- `experiments.csv` \
+  Метрики моделей на каждом наборе данных (ROC-AUC, F1-score, PR-AUC, Balanced Accuracy).
+- `featute_importances.csv` \
+  `feature_importance` лучших моделей на каждом наборе данных по метрике [Balanced Accuracy](https://evaluation-metrics-rewrite.vercel.app/docs/metrics/balanced-accuracy).
+
+Краткая сводка экспериментов указана в таблице ниже
+
+| Набор данных | Модель                 | Balanced Accuracy |
+| ------------ | ---------------------- | ----------------: |
+| 2020         | CatBoostClassifier     |            0.7664 |
+| 2020         | LogisticRegression     |            0.7636 |
+| 2020         | RandomForestClassifier |            0.7627 |
+| 2022         | CatBoostClassifier     |            0.7765 |
+| 2022         | LogisticRegression     |            0.7755 |
+| 2022         | RandomForestClassifier |            0.7699 |
+| merged       | CatBoostClassifier     |            0.7595 |
+| merged       | RandomForestClassifier |            0.7575 |
+| merged       | LogisticRegression     |            0.7548 |
+
+Таким образом, `CatBoostClassifier` показал наилучшее качество на всех наборах данных.
