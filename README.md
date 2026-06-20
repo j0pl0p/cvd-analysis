@@ -1,6 +1,6 @@
 ## Репозиторий исследовательского проекта на тему «Анализ и визуализация данных с использованием Yandex DataLens: исследование на основе персональных индикаторов сердечно-сосудистых заболеваний»
 
-Ссылка на дашборд в Yandex DataLens: [тык](https://datalens.yandex/lw4awrvaz70c6)
+Курсовой проект 2 курса ПМИ. Ссылка на дашборд в Yandex DataLens: [тык](https://datalens.yandex/lw4awrvaz70c6)
 
 ## Структура репозитория
 
@@ -47,6 +47,7 @@
 │   └── style.mplstyle                                 # Стилевой файл
 ├── .gitignore
 ├── certificate.pdf                                    # Сертификат о прохождении курса от Yandex DataLens
+├── paper.pdf                                          # Отчёт проекта
 ├── presentation.pdf                                   # Презентация проекта
 └── README.md
 ```
